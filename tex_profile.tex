@@ -1,0 +1,148 @@
+% ----------------------------------------
+% language, font and text format
+% ----------------------------------------
+\usepackage[brazilian, american]{babel}
+\RequirePackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{textcomp}
+
+% ----------------------------------------
+% tables
+% ----------------------------------------
+\usepackage{makecell}
+\usepackage{tabularx}
+
+% ----------------------------------------
+% URL with hyperref
+% ----------------------------------------
+\usepackage{hyperref}
+
+% ----------------------------------------
+% includegraphics
+% ----------------------------------------
+\usepackage{graphicx}
+% float larging image with subcaption
+\usepackage{float}
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[fileext=lst,placement={!htbp},name=Listing]{listing}
+\usepackage{subcaption}
+
+% ----------------------------------------
+% itemize
+% ----------------------------------------
+\def\labelitemi{--}
+
+% ----------------------------------------
+% fixme
+% ----------------------------------------
+\usepackage[nomargin,inline,final]{fixme}
+\fxusetheme{color}
+
+% ----------------------------------------
+% tikz-uml
+% ----------------------------------------
+\usepackage{tikz}
+\usepackage{tikz-uml}
+\tikzumlset{fill class=white!20, font=\footnotesize\ttfamily}
+
+% ----------------------------------------
+% \ref utils
+% ----------------------------------------
+\newcommand{\fig}[1]{\figurename~\ref{#1}}
+\newcommand{\tab}[1]{Table~\ref{#1}}
+\newcommand{\lis}[1]{Listing~\ref{#1}}
+\newcommand{\appen}[1]{Appendix~\ref{#1}}
+\newcommand{\sect}[1]{Section~\ref{#1}}
+\newcommand{\subsect}[1]{subsection~\ref{#1}}
+
+% ----------------------------------------
+% xml tags utils
+% ----------------------------------------
+\newcommand{\xml}[1]{\texttt{<#1>}}
+\newcommand{\attr}[1]{\emph{#1}}
+
+% ----------------------------------------
+% spacing controll
+% ----------------------------------------
+\newcommand{\captionvspaceend}{\vspace{-1em}}
+\newcommand{\captionvspace}{\vspace{-1em}}
+\setlength{\itemsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\abovecaptionskip}{0.1pt}
+\setlength{\belowcaptionskip}{0pt}
+
+% ----------------------------------------
+% tree
+% ----------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+% ----------------------------------------
+% minted listing inside tcolorbox
+% ----------------------------------------
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage[many]{tcolorbox}
+\usepackage{minted}
+\tcbuselibrary{minted,breakable,skins,raster}
+\newtcblisting[]{mintedlistingtcblisting}[1][!ht]{
+    enhanced jigsaw,pad at break*=5mm,
+    fontsize=\footnotesize
+    colback=yellow!5,colframe=yellow!50!black,listing only,
+    listing engine=minted,
+    minted language=#1,
+    minted options={fontsize=\footnotesize,breaklines,autogobble,linenos,numbersep=3mm},
+    overlay={\begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west)
+    rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}
+}
+
+% ----------------------------------------
+% listing code inside tcolorbox
+% ----------------------------------------
+\usepackage{listings}
+\usepackage[many]{tcolorbox}
+\tcbuselibrary{listingsutf8}
+\newtcblisting[]{mytcblisting}[1][!ht]{
+    enhanced jigsaw,
+    enforce breakable,
+    pad at break*=1mm,
+    colback=black!2,
+    colframe=black!30,
+    top=2mm, bottom=2mm, left=2mm, right=0mm,
+    listing only,
+    coltitle=black,
+    % drop fuzzy shadow,
+    listing options={
+        % shape
+        xleftmargin=0pt, % 0 is default
+        xrightmargin=0pt, % 0 is default
+        % frame ---
+        framesep=0pt,
+        aboveskip=-6pt,
+        belowskip=-6pt,
+        captionpos=b, % sets the caption position
+        % numbers ----
+        % numberstyle=\footnotesize\ttfamily,
+        numbers=left,
+        % firstnumber=2
+        numbersep=1pt,% how far the line-numbers are from the code
+        stepnumber=1, % the step between two line-numbers.
+        numberstyle=\tiny\ttfamily,
+        % code ----
+        language=#1,
+        tabsize=2,
+        showspaces=false, % show spaces with underscores
+        showstringspaces=false, % underline spaces within strings
+        showtabs=false, % show tabs using underscores
+        breaklines=true, % sets automatic line breaking
+        breakindent=8pt,
+        basicstyle=\footnotesize\ttfamily,
+        columns=fullflexible,
+        keywordstyle=\color{black},
+        morekeywords={
+            <, >,
+        },
+    },
+}

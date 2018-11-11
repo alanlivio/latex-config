@@ -42,18 +42,13 @@
 % fixme
 % ----------------------------------------
 \usepackage{color,soul}
-\usepackage[nomargin,inline,draft]{fixme}
+\usepackage[nomargin,inline]{fixme}
 \fxusetheme{color}
+% \fxsetup{draft}
+% \fxsetup{final}
 
 % ----------------------------------------
-% tikz-uml
-% ----------------------------------------
-\usepackage{tikz}
-\usepackage{tikz-uml}
-\tikzumlset{fill class=white!20, font=\footnotesize\ttfamily}
-
-% ----------------------------------------
-% ref utils
+% ref elements
 % ----------------------------------------
 \newcommand{\reffig}[1]{\figurename~\ref{#1}}
 \newcommand{\reftab}[1]{Table~\ref{#1}}
@@ -63,7 +58,7 @@
 \newcommand{\refsubsec}[1]{subsection~\ref{#1}}
 
 % ----------------------------------------
-% xml tags utils
+% xml tags
 % ----------------------------------------
 \newcommand{\xml}[1]{\texttt{<#1>}}
 \newcommand{\attr}[1]{\emph{#1}}
@@ -73,14 +68,12 @@
 % ----------------------------------------
 \usepackage{forloop}
 
-% spacing controll
+% spacing control
 % ----------------------------------------
-\newcommand{\captionvspaceend}{\vspace{-1em}}
-\newcommand{\captionvspace}{\vspace{-1em}}
 \setlength{\itemsep}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\parsep}{0pt}
-\setlength{\abovecaptionskip}{0.1pt}
+\setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 
 % ----------------------------------------
@@ -120,14 +113,14 @@
     pad at break*=1mm,
     colback=black!2,
     colframe=black!30,
-    top=2mm, bottom=2mm, left=2mm, right=0mm,
+    top=1mm, bottom=1mm, left=0mm, right=0mm,
     listing only,
     coltitle=black,
     % drop fuzzy shadow,
     listing options={
         % shape
         xleftmargin=0pt, % 0 is default
-        xrightmargin=0pt, % 0 is default
+        xrightmargin=-4pt, % 0 is default
         % frame ---
         framesep=0pt,
         aboveskip=-6pt,
@@ -137,7 +130,7 @@
         % numberstyle=\footnotesize\ttfamily,
         numbers=left,
         % firstnumber=2
-        numbersep=1pt,% how far the line-numbers are from the code
+        numbersep=8pt,% how far the line-numbers are from the code
         stepnumber=1, % the step between two line-numbers.
         numberstyle=\tiny\ttfamily,
         % code ----

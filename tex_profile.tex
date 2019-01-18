@@ -27,7 +27,10 @@
 % includegraphics
 % ----------------------------------------
 \usepackage{graphicx}
-% float larging image with subcaption
+
+% ----------------------------------------
+% includegraphics for larging image with subcaption
+% ----------------------------------------
 \usepackage{float}
 \usepackage{newfloat}
 \DeclareFloatingEnvironment[fileext=lst,placement={!htbp},name=Listing]{listing}
@@ -91,14 +94,14 @@
 \usepackage{minted}
 \tcbuselibrary{minted,breakable,skins,raster}
 \newtcblisting[]{mintedlistingtcblisting}[1][!ht]{
-    enhanced jigsaw,pad at break*=5mm,
-    fontsize=\footnotesize
-    colback=yellow!5,colframe=yellow!50!black,listing only,
-    listing engine=minted,
-    minted language=#1,
-    minted options={fontsize=\footnotesize,breaklines,autogobble,linenos,numbersep=3mm},
-    overlay={\begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west)
-    rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}
+  enhanced jigsaw,pad at break*=5mm,
+  fontsize=\footnotesize
+  colback=yellow!5,colframe=yellow!50!black,listing only,
+  listing engine=minted,
+  minted language=#1,
+  minted options={fontsize=\footnotesize,breaklines,autogobble,linenos,numbersep=3mm},
+  overlay={\begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west)
+  rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}
 }
 
 % ----------------------------------------
@@ -108,44 +111,44 @@
 \usepackage[many]{tcolorbox}
 \tcbuselibrary{listingsutf8}
 \newtcblisting[]{mytcblisting}[1][!ht]{
-    enhanced jigsaw,
-    enforce breakable,
-    pad at break*=1mm,
-    colback=black!2,
-    colframe=black!30,
-    top=1mm, bottom=1mm, left=0mm, right=0mm,
-    listing only,
-    coltitle=black,
-    % drop fuzzy shadow,
-    listing options={
-        % shape
-        xleftmargin=0pt, % 0 is default
-        xrightmargin=-4pt, % 0 is default
-        % frame ---
-        framesep=0pt,
-        aboveskip=-6pt,
-        belowskip=-6pt,
-        captionpos=b, % sets the caption position
-        % numbers ----
-        % numberstyle=\footnotesize\ttfamily,
-        numbers=left,
-        % firstnumber=2
-        numbersep=8pt,% how far the line-numbers are from the code
-        stepnumber=1, % the step between two line-numbers.
-        numberstyle=\tiny\ttfamily,
-        % code ----
-        language=#1,
-        tabsize=2,
-        showspaces=false, % show spaces with underscores
-        showstringspaces=false, % underline spaces within strings
-        showtabs=false, % show tabs using underscores
-        breaklines=true, % sets automatic line breaking
-        breakindent=8pt,
-        basicstyle=\footnotesize\ttfamily,
-        columns=fullflexible,
-        keywordstyle=\color{black},
-        morekeywords={
-            <, >,
-        },
+  enhanced jigsaw,
+  enforce breakable,
+  pad at break*=1mm,
+  colback=black!2,
+  colframe=black!30,
+  top=1mm, bottom=1mm, left=0mm, right=0mm,
+  listing only,
+  coltitle=black,
+  % drop fuzzy shadow,
+  listing options={
+    % shape
+    xleftmargin=0pt, % 0 is default
+    xrightmargin=-4pt, % 0 is default
+    % frame ---
+    framesep=0pt,
+    aboveskip=-6pt,
+    belowskip=-6pt,
+    captionpos=b, % sets the caption position
+    % numbers ----
+    % numberstyle=\footnotesize\ttfamily,
+    numbers=left,
+    % firstnumber=2
+    numbersep=8pt,% how far the line-numbers are from the code
+    stepnumber=1, % the step between two line-numbers.
+    numberstyle=\tiny\ttfamily,
+    % code ----
+    language=#1,
+    tabsize=2,
+    showspaces=false, % show spaces with underscores
+    showstringspaces=false, % underline spaces within strings
+    showtabs=false, % show tabs using underscores
+    breaklines=true, % sets automatic line breaking
+    breakindent=8pt,
+    basicstyle=\footnotesize\ttfamily,
+    columns=fullflexible,
+    keywordstyle=\color{black},
+    morekeywords={
+      <, >,
     },
+  },
 }

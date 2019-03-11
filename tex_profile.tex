@@ -4,9 +4,14 @@
 % ---------------------------------------
 
 % ----------------------------------------
-% use MS word configs
+% use MS lyaout and font
 % ----------------------------------------
 % \usepackage{wordlike}
+
+% ----------------------------------------
+% better formatting of the A4 page
+% ----------------------------------------
+% \usepackage[big]{layaureo}
 
 % ----------------------------------------
 % language
@@ -34,10 +39,19 @@
 \usepackage{multirow}
 
 % ----------------------------------------
+% table custom cells
+% ----------------------------------------
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+% ----------------------------------------
 % URL with hyperref
 % ----------------------------------------
 \usepackage{url}
 \usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
 
 % ----------------------------------------
 % includegraphics
@@ -55,13 +69,24 @@
 % ----------------------------------------
 % itemize
 % ----------------------------------------
-\def\labelitemi{--}
 \usepackage{enumitem}
+\SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*}
+\def\labelitemi{$-$}
+
+% ----------------------------------------
+% color
+% ----------------------------------------
+\RequirePackage{color}
+\usepackage{xcolor}
+
+% ----------------------------------------
+% Hyphenation
+% ----------------------------------------
+\usepackage{soul}
 
 % ----------------------------------------
 % fixme
 % ----------------------------------------
-\usepackage{color,soul}
 \usepackage[nomargin,inline]{fixme}
 \fxusetheme{color}
 \fxsetup{draft}

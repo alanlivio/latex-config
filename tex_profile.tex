@@ -57,9 +57,9 @@
 % URL with hyperref
 % ----------------------------------------
 \usepackage{url}
-\usepackage{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+\usepackage[hidelinks]{hyperref}
+% \definecolor{linkcolour}{rgb}{0,0.2,0.6}
+% \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
 
 % ----------------------------------------
 % includegraphics
@@ -71,7 +71,6 @@
 % ----------------------------------------
 \usepackage{float}
 \usepackage{newfloat}
-\DeclareFloatingEnvironment[fileext=lst,placement={!htbp},name=Listing]{listing}
 \usepackage{subcaption}
 
 % ----------------------------------------
@@ -97,7 +96,7 @@
 % ----------------------------------------
 \usepackage[nomargin,inline]{fixme}
 \fxusetheme{color}
-\fxsetup{draft}
+% \fxsetup{draft}
 % \fxsetup{final}
 
 % ----------------------------------------
@@ -123,11 +122,11 @@
 
 % spacing control
 % ----------------------------------------
-\setlength{\itemsep}{0pt}
-\setlength{\parskip}{0pt}
-\setlength{\parsep}{0pt}
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
+% \setlength{\itemsep}{0pt}
+% \setlength{\parskip}{0pt}
+% \setlength{\parsep}{0pt}
+% \setlength{\abovecaptionskip}{0pt}
+% \setlength{\belowcaptionskip}{0pt}
 
 % ----------------------------------------
 % lipsum
@@ -207,7 +206,6 @@
     },
   },
 }
-
 
 \newcommand\blindreviewauthors{
     \author{Removed for double-blind review}

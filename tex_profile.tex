@@ -231,3 +231,12 @@
 
   \renewcommand{\shortauthors}{Removed for blind review}
 }
+
+\newcommand\AddReptedWord[1]{
+    \newcount\zz
+    \loop
+    foo-word
+    \advance\zz1
+    \ifnum\zz<#1
+    \repeat
+}

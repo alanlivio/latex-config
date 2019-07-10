@@ -204,6 +204,15 @@
   },
 }
 
+\newcommand\disableACMCopyRightaddBlindReviewAuthors{
+  % Removes citation below abstract
+  \settopmatter{printacmref=false}
+  % Removes footnote in first column
+  \renewcommand\footnotetextcopyrightpermission[1]{}
+  % Removes running headers
+  \pagestyle{plain}
+}
+
 \newcommand\addBlindReviewAuthors{
   \author{Removed for blind review}
   \affiliation{%

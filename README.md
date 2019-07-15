@@ -1,8 +1,8 @@
 # tex_profile
 
-![tex](https://en.wikipedia.org/wiki/File:LaTeX_logo.svg)
+<img title="Latex Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/LaTeX_logo.svg/640px-LaTeX_logo.svg.png" width="250">
 
-This project made easy latex profile configuration and functions.
+This project provide some useful configuration and functions for latex writing.
 
 ## How to use
 

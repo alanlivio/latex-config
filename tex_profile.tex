@@ -72,6 +72,7 @@
 % ----------------------------------------
 \usepackage{float}
 \usepackage{newfloat}
+\usepackage{subfloat}
 \usepackage{subcaption}
 
 % ----------------------------------------
@@ -87,6 +88,7 @@
 \RequirePackage{color}
 \usepackage{soulutf8}
 \usepackage{xcolor}
+\usepackage{multicol}
 
 % ----------------------------------------
 % fixme
@@ -122,8 +124,8 @@
 % \setlength{\itemsep}{0pt}
 % \setlength{\parskip}{0pt}
 % \setlength{\parsep}{0pt}
-% \setlength{\abovecaptionskip}{0pt}
-% \setlength{\belowcaptionskip}{0pt}
+% \setlength{\abovecaptionskip}{1pt}
+% \setlength{\belowcaptionskip}{1pt}
 
 % ----------------------------------------
 % lipsum
@@ -172,71 +174,65 @@
   coltitle=black,
   % drop fuzzy shadow,
   listing options={
-  % shape
-  xleftmargin=0pt, % 0 is default
-  xrightmargin=-4pt, % 0 is default
-  % frame ---
-  framesep=0pt,
-  aboveskip=-6pt,
-  belowskip=-6pt,
-  captionpos=b, % sets the caption position
-  % numbers ----
-  % numberstyle=\footnotesize\ttfamily,
-  numbers=left,
-  % firstnumber=2
-  numbersep=8pt,% how far the line-numbers are from the code
-  stepnumber=1, % the step between two line-numbers.
-  numberstyle=\tiny\ttfamily,
-  % code ----
-  language=#1,
-  tabsize=2,
-  showspaces=false, % show spaces with underscores
-  showstringspaces=false, % underline spaces within strings
-  showtabs=false, % show tabs using underscores
-  breaklines=true, % sets automatic line breaking
-  breakindent=8pt,
-  basicstyle=\footnotesize\ttfamily,
-  columns=fullflexible,
-  keywordstyle=\color{black},
-  morekeywords={
-    <, >,
+    % shape
+    xleftmargin=0pt, % 0 is default
+    xrightmargin=-4pt, % 0 is default
+    % frame ---
+    framesep=0pt,
+    aboveskip=-6pt,
+    belowskip=-6pt,
+    captionpos=b, % sets the caption position
+    % numbers ----
+    % numberstyle=\footnotesize\ttfamily,
+    numbers=left,
+    % firstnumber=2
+    numbersep=8pt,% how far the line-numbers are from the code
+    stepnumber=1, % the step between two line-numbers.
+    numberstyle=\tiny\ttfamily,
+    % code ----
+    language=#1,
+    tabsize=2,
+    showspaces=false, % show spaces with underscores
+    showstringspaces=false, % underline spaces within strings
+    showtabs=false, % show tabs using underscores
+    breaklines=true, % sets automatic line breaking
+    breakindent=8pt,
+    basicstyle=\footnotesize\ttfamily,
+    columns=fullflexible,
+    keywordstyle=\color{black},
+    morekeywords={
+      <, >,
+    },
   },
-  },
 }
 
-\newcommand\disableACMCopyRightaddBlindReviewAuthors{
-  % Removes citation below abstract
-  \settopmatter{printacmref=false}
-  % Removes footnote in first column
-  \renewcommand\footnotetextcopyrightpermission[1]{}
-  % Removes running headers
-  \pagestyle{plain}
+% ----------------------------------------
+% draft watermark
+% ----------------------------------------
+\newcommand\enabledraftwatermark{
+  \RequirePackage{draftwatermark}
+  \SetWatermarkFontSize{0.5in}
+  \SetWatermarkColor[gray]{.9}
+  \SetWatermarkText{\parbox{12em}{\centering
+      Unpublished working draft.\\
+      Not for distribution.}}
 }
 
-\newcommand\addBlindReviewAuthors{
-  \author{Removed for blind review}
-  \affiliation{%
-    \institution{Removed for blind review}}
-  \email{Removed for blind review}
+% ----------------------------------------
+% blind review authors
+% ----------------------------------------
+\newcommand\blindreviewauthors{
+    \author{Removed for double-blind review}
+    \affiliation{%
+      \institution{Removed for double-blind review}}
 
-  \author{Removed for blind review}
-  \affiliation{%
-    \institution{Removed for blind review}}
-  \email{Removed for blind review}
+    \author{Removed for double-blind review}
+    \affiliation{%
+      \institution{Removed for double-blind review}}
 
-  \author{Removed for blind review}
-  \affiliation{%
-    \institution{Removed for blind review}}
-  \email{Removed for blind review}
+    \author{Removed for double-blind review}
+    \affiliation{%
+      \institution{Removed for double-blind review}}
 
-  \renewcommand{\shortauthors}{Removed for blind review}
-}
-
-\newcommand\AddReptedWord[1]{
-    \newcount\zz
-    \loop
-    foo-word
-    \advance\zz1
-    \ifnum\zz<#1
-    \repeat
+    \renewcommand{\shortauthors}{Removed for double-blind review}
 }

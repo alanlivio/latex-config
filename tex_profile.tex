@@ -230,6 +230,17 @@
       Not for distribution.}}
 }
 
+
+% ----------------------------------------
+% acm prepring
+% ----------------------------------------
+\newcommand\enableacmpreprint{
+  \settopmatter{printacmref=false}
+  \setcopyright{none}
+  \renewcommand\footnotetextcopyrightpermission[1]{}
+  \pagestyle{plain}
+}
+
 % ----------------------------------------
 % blind review authors
 % ----------------------------------------

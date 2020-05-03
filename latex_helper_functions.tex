@@ -1,236 +1,86 @@
-% author: Alan Livio <alan@telemidia.puc-rio.br>
-% URL:    https://github.com/alanlivio/latex-helper-functions
+% -- author: Alan Livio <alan@telemidia.puc-rio.br>
+% -- URL:    https://github.com/alanlivio/latex-helper-functions
 
-% ----------------------------------------
-% work like layout
-% ----------------------------------------
-% \usepackage{wordlike}
-% \usepackage[big]{layaureo}
+\newcommand\hfEnableCommonDocument{
+  % -- layout
+  % \RequirePackage[a4paper, total={6in, 9.5in}]{geometry}
+  \RequirePackage{wordlike}
 
-% ----------------------------------------
-% ABNT like layout
-% ----------------------------------------
-% \usepackage{lmodern}
-% \setlength{\parskip}{0.2cm}
-% \setlength{\parindent}{1.3cm}
-% \usepackage{geometry}
-%  \geometry{
-%  a4paper,
-%  total={170mm,257mm},
-%  left=3cm,
-%  top=3cm,
-%  right=3cm,
-%  bottom=3cm
-%  }
+  % -- document specifics
+  \RequirePackage[brazilian, american]{babel}
 
-% ----------------------------------------
-% SmallCaps font
-% ----------------------------------------
-% \usepackage{fontspec}
-% \defaultfontfeatures{Mapping=tex-text}
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]{Fontin.otf}
+  % -- tables
+  \RequirePackage[table]{xcolor}
+  \RequirePackage{multirow}
+  \RequirePackage{float}
+  \RequirePackage{makecell}
+  \RequirePackage{tabularx}
+  \RequirePackage{multirow}
 
-% ----------------------------------------
-% language
-% ----------------------------------------
-\usepackage[brazilian, american]{babel}
-% \usepackage[portuguese]{babel}
+  % -- bib
+  \RequirePackage[numbers,sort&compress]{natbib}
+  \setlength{\bibsep}{0pt}
+  \RequirePackage{usebib}
 
-% ----------------------------------------
-% fonts
-% ----------------------------------------
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{textcomp}
-\usepackage{amsmath,amssymb,amsfonts}
+  % -- fonts
+  \RequirePackage{lmodern}
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage[utf8]{inputenc}
+  \RequirePackage{textcomp} %  text symbols
+  \RequirePackage{amsmath,amssymb,amsfonts} % math
 
-% ----------------------------------------
-% tables
-% ----------------------------------------
-\usepackage{makecell}
-\usepackage{tabularx}
-\usepackage{multirow}
+  % -- svg
+  \RequirePackage{svg}
 
-% ----------------------------------------
-% table custom cells
-% ----------------------------------------
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+  % -- tables
+  \RequirePackage{makecell}
+  \RequirePackage{tabularx}
+  \RequirePackage{multirow}
 
-% ----------------------------------------
-% URL and hyperref
-% ----------------------------------------
-\usepackage[hyphens]{url}
-\usepackage{hyperref}
-\hypersetup{hidelinks}
+  % -- itemize
+  \def\labelitemi{—}
+  \RequirePackage{enumitem}
+  \SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt}
+  \def\labelitemi{$-$}
 
-% ----------------------------------------
-% URL color
-% ----------------------------------------
-% \definecolor{linkcolour}{rgb}{0,0.2,0.6}
-% \hypersetup{colorlinks,urlcolor=linkcolour, linkcolor=linkcolour}
+  % -- URL with hyperref
+  \RequirePackage{url}
+  \RequirePackage{hyperref}
+  \hypersetup{hidelinks}
 
-% ----------------------------------------
-% includegraphics
-% ----------------------------------------
-\usepackage{graphicx}
+  % -- includegraphics
+  \RequirePackage{graphicx}
 
-% ----------------------------------------
-% includegraphics for larging image with subcaption
-% ----------------------------------------
-\usepackage{float}
-\usepackage{newfloat}
-\usepackage{subfloat}
-\usepackage{subcaption}
+  % -- includegraphics
+  \RequirePackage{color,soul}
+  \RequirePackage[nomargin,inline]{fixme}
+  \RequirePackage{subcaption} %p pra organizar melhor as imagens
 
-% ----------------------------------------
-% itemize
-% ----------------------------------------
-\usepackage{enumitem}
-\SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*}
-\def\labelitemi{$-$}
-
-% ----------------------------------------
-% color
-% ----------------------------------------
-\RequirePackage{color}
-\usepackage{soulutf8}
-\usepackage{xcolor}
-\usepackage{multicol}
-
-% ----------------------------------------
-% fixme
-% ----------------------------------------
-\usepackage[nomargin,inline]{fixme}
-\fxusetheme{color}
-% \fxsetup{draft}
-% \fxsetup{final}
-
-% ----------------------------------------
-% ref elements
-% ----------------------------------------
-\newcommand{\reffig}[1]{\figurename~\ref{#1}}
-\newcommand{\reftab}[1]{Table~\ref{#1}}
-\newcommand{\reflis}[1]{Listing~\ref{#1}}
-\newcommand{\refappen}[1]{Appendix~\ref{#1}}
-\newcommand{\refsec}[1]{Section~\ref{#1}}
-\newcommand{\refsubsec}[1]{subsection~\ref{#1}}
-
-% ----------------------------------------
-% xml tags
-% ----------------------------------------
-\newcommand{\xml}[1]{\texttt{<#1>}}
-\newcommand{\attr}[1]{\emph{#1}}
-
-% ----------------------------------------
-% compact section titles
-% ----------------------------------------
-% \usepackage[compact]{titlesec}
-% \titlespacing{\section}{0pt}{*0}{*0}
-% \titlespacing{\subsection}{0pt}{*0}{*0}
-% \titlespacing{\subsubsection}{0pt}{*0}{*0}
-
-% ----------------------------------------
-% for
-% ----------------------------------------
-\usepackage{forloop}
-
-% spacing control
-% ----------------------------------------
-% \setlength{\itemsep}{0pt}
-% \setlength{\parskip}{0pt}
-% \setlength{\parsep}{0pt}
-% \setlength{\abovecaptionskip}{1pt}
-% \setlength{\belowcaptionskip}{1pt}
-
-% ----------------------------------------
-% lipsum
-% ----------------------------------------
-\usepackage{lipsum}
-
-% ----------------------------------------
-% tree
-% ----------------------------------------
-\usepackage{tikz}
-\usetikzlibrary{trees}
-
-% ----------------------------------------
-% minted listing inside tcolorbox
-% ----------------------------------------
-\usepackage{listings}
-\usepackage{tikz}
-\usepackage[many]{tcolorbox}
-\usepackage{minted}
-\tcbuselibrary{minted,breakable,skins,raster}
-\newtcblisting[]{mintedlistingtcblisting}[1][!ht]{
-  enhanced jigsaw,pad at break*=5mm,
-  fontsize=\footnotesize
-  colback=yellow!5,colframe=yellow!50!black,listing only,
-  listing engine=minted,
-  minted language=#1,
-  minted options={fontsize=\footnotesize,breaklines,autogobble,linenos,numbersep=3mm},
-  overlay={\begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west)
-  rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}
+  % -- lipsum
+  \RequirePackage{lipsum}
 }
 
-% ----------------------------------------
-% listing code inside tcolorbox
-% ----------------------------------------
-\usepackage{listings}
-\usepackage[many]{tcolorbox}
-\tcbuselibrary{listingsutf8}
-\newtcblisting[]{mytcblisting}[1][!ht]{
-  enhanced jigsaw,
-  enforce breakable,
-  pad at break*=1mm,
-  colback=black!2,
-  colframe=black!30,
-  top=1mm, bottom=1mm, left=0mm, right=0mm,
-  listing only,
-  coltitle=black,
-  % drop fuzzy shadow,
-  listing options={
-    % shape
-    xleftmargin=0pt, % 0 is default
-    xrightmargin=-4pt, % 0 is default
-    % frame ---
-    framesep=0pt,
-    aboveskip=-6pt,
-    belowskip=-6pt,
-    captionpos=b, % sets the caption position
-    % numbers ----
-    % numberstyle=\footnotesize\ttfamily,
-    numbers=left,
-    % firstnumber=2
-    numbersep=8pt,% how far the line-numbers are from the code
-    stepnumber=1, % the step between two line-numbers.
-    numberstyle=\tiny\ttfamily,
-    % code ----
-    language=#1,
-    tabsize=2,
-    showspaces=false, % show spaces with underscores
-    showstringspaces=false, % underline spaces within strings
-    showtabs=false, % show tabs using underscores
-    breaklines=true, % sets automatic line breaking
-    breakindent=8pt,
-    basicstyle=\footnotesize\ttfamily,
-    columns=fullflexible,
-    keywordstyle=\color{black},
-    morekeywords={
-      <, >,
-    },
-  },
+\newcommand\hfReduceSpacing{
+    % -- reduce section titles spacing
+    \RequirePackage[compact]{titlesec}
+    \titlespacing{\section}{0pt}{*0}{*0}
+    \titlespacing{\subsection}{0pt}{*0}{*0}
+    \titlespacing{\subsubsection}{0pt}{*0}{*0}
+
+    % -- reduce itemize spacing
+    \setlength{\itemsep}{0pt}
+
+    % -- reduce paragraph spacing
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+
+    % -- reduce caption spacing
+    \setlength{\abovecaptionskip}{1pt}
+    \setlength{\belowcaptionskip}{1pt}
 }
 
-% ----------------------------------------
-% draft watermark
-% ----------------------------------------
-\newcommand\enableDraftWatermark{
+% -- draft watermark
+\newcommand\hfEnableDraftWatermark{
   \RequirePackage{draftwatermark}
   \SetWatermarkFontSize{0.5in}
   \SetWatermarkColor[gray]{.9}
@@ -239,37 +89,29 @@
       Not for distribution.}}
 }
 
-
-% ----------------------------------------
-% acm prepring
-% ----------------------------------------
-\newcommand\enableACMPreprint{
+% -- acm prepring
+\newcommand\hfEnableACMPreprint{
   \settopmatter{printacmref=false}
   \setcopyright{none}
   \renewcommand\footnotetextcopyrightpermission[1]{}
   \pagestyle{plain}
 }
 
-% ----------------------------------------
-% blind review authors
-% ----------------------------------------
-\newcommand\addACMBlindReviewAuthors{
+% -- blind review authors
+\newcommand\hfAddACMBlindReviewAuthors{
   \author{Removed for double-blind review}
   \affiliation{%
     \institution{Removed for double-blind review}}
-
   \author{Removed for double-blind review}
   \affiliation{%
     \institution{Removed for double-blind review}}
-
   \author{Removed for double-blind review}
   \affiliation{%
     \institution{Removed for double-blind review}}
-
   \renewcommand{\shortauthors}{Removed for double-blind review}
 }
 
-\newcommand\addIEEEBlindReviewAuthors{
+\newcommand\hfAddIEEEBlindReviewAuthors{
   \author{
   \IEEEauthorblockN{Removed for double-blind review}
   \IEEEauthorblockA{Removed for double-blind review  \\ Removed for double-blind review}

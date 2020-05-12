@@ -1,12 +1,11 @@
 % -- author: Alan Livio <alan@telemidia.puc-rio.br>
 % -- URL:    https://github.com/alanlivio/latex-helper-functions
 
-\newcommand\hfEnableCommonDocument{
-  % -- layout
-  % \RequirePackage[a4paper, total={6in, 9.5in}]{geometry}
-  \RequirePackage{wordlike}
 
-  % -- document specifics
+% -- common
+% ----------------------------------------
+\newcommand\hfCommonPackages{
+  % -- lang
   \RequirePackage[brazilian, american]{babel}
 
   % -- tables
@@ -17,67 +16,128 @@
   \RequirePackage{tabularx}
   \RequirePackage{multirow}
 
-  % -- bib
-  \RequirePackage[numbers,sort&compress]{natbib}
-  \setlength{\bibsep}{0pt}
-  \RequirePackage{usebib}
-
   % -- fonts
   \RequirePackage{lmodern}
   \RequirePackage[T1]{fontenc}
   \RequirePackage[utf8]{inputenc}
-  \RequirePackage{textcomp} %  text symbols
-  \RequirePackage{amsmath,amssymb,amsfonts} % math
+  \RequirePackage{textcomp}
+  \RequirePackage{amsmath,amssymb,amsfonts}
 
   % -- svg
   \RequirePackage{svg}
 
-  % -- tables
-  \RequirePackage{makecell}
-  \RequirePackage{tabularx}
-  \RequirePackage{multirow}
-
   % -- itemize
-  \def\labelitemi{—}
   \RequirePackage{enumitem}
   \SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt}
-  \def\labelitemi{$-$}
 
-  % -- URL with hyperref
+  % -- URL
   \RequirePackage{url}
-  \RequirePackage{hyperref}
-  \hypersetup{hidelinks}
 
   % -- includegraphics
   \RequirePackage{graphicx}
 
   % -- includegraphics
-  \RequirePackage{color,soul}
+  \RequirePackage{color}
+  \RequirePackage{soulutf8}
+
+  % -- fixme
   \RequirePackage[nomargin,inline]{fixme}
-  \RequirePackage{subcaption} %p pra organizar melhor as imagens
 
   % -- lipsum
   \RequirePackage{lipsum}
 }
 
-\newcommand\hfReduceSpacing{
-    % -- reduce section titles spacing
-    \RequirePackage[compact]{titlesec}
-    \titlespacing{\section}{0pt}{*0}{*0}
-    \titlespacing{\subsection}{0pt}{*0}{*0}
-    \titlespacing{\subsubsection}{0pt}{*0}{*0}
-
-    % -- reduce itemize spacing
-    \setlength{\itemsep}{0pt}
-
-    % -- reduce paragraph spacing
-    \setlength{\parskip}{0pt}
-    \setlength{\parsep}{0pt}
-
-    % -- reduce caption spacing
-    \setlength{\abovecaptionskip}{1pt}
-    \setlength{\belowcaptionskip}{1pt}
+% -- geometry
+% ----------------------------------------
+\newcommand\hfGeometryWordLike{
+  \RequirePackage{wordlike}
 }
+
+\newcommand\hfGeometryLarge{
+  \RequirePackage[a4paper, total={6in, 9.5in}]{geometry}
+}
+
+% -- hyperlink
+% ----------------------------------------
+\newcommand\hfHyperrefHideLinks{
+  \RequirePackage{url}
+  \RequirePackage{hyperref}
+  \hypersetup{hidelinks}
+}
+
+% -- paragraph
+% ----------------------------------------
+\newcommand\hfParagrphReduceSpacing{
+  % -- linespacing
+  \linespread{1}
+  % -- reduce paragraph spacing
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}
+
+% -- enum
+% ----------------------------------------
+\newcommand\hfEnumReduceSpacing{
+  % -- reduce itemize spacing
+  \RequirePackage{enumitem}
+  \setlength{\itemsep}{0pt}
+}
+
+\newcommand\hfEnumItemHyphen{
+  \RequirePackage{enumitem}
+  \def\labelitemi{$-$}
+}
+
+% -- caption
+% ----------------------------------------
+\newcommand\hfCaptionSub{
+  \RequirePackage{subcaption}
+}
+
+\newcommand\hfCaptionSpacing{
+  % -- reduce caption spacing
+  \RequirePackage{caption}
+  \setlength{\abovecaptionskip}{1pt}
+  \setlength{\belowcaptionskip}{1pt}
+}
+
+% -- Multibib
+% ----------------------------------------
+\newcommand\hfMultiBib{
+  \RequirePackage{multibib}
+  % \RequirePackage[resetlabels]{multibib}
+}
+
+\newcommand\hfMultiBibAsSubSections{
+  \RequirePackage{multibib}
+  \renewcommand{\bibsection}{\subsection{\bibname}}
+}
+
+% -- Multibib
+% ----------------------------------------
+\newcommand\hfNatibibSortNumber{
+  % -- bib number, sorted, compress
+  \RequirePackage[numbers,sort&compress]{natbib}
+}
+
+\newcommand\hfNatibibReduceSpacing{
+  \RequirePackage{natbib}
+  \setlength{\bibsep}{0.1pt}
+}
+
+% -- title
+% ----------------------------------------
+
+\newcommand\hfTitleReduceSpacing{
+  % -- reduce section titles spacing
+  \RequirePackage[compact]{titlesec}
+  \titlespacing{\section}{0pt}{*0}{*0}
+  \titlespacing{\subsection}{0pt}{*0}{*0}
+  \titlespacing{\subsubsection}{0pt}{*0}{*0}
+}
+
+% -- draft and submissions
+% ----------------------------------------
 
 % -- draft watermark
 \newcommand\hfEnableDraftWatermark{
@@ -89,7 +149,7 @@
       Not for distribution.}}
 }
 
-% -- acm prepring
+% -- Enable acm prepring
 \newcommand\hfEnableACMPreprint{
   \settopmatter{printacmref=false}
   \setcopyright{none}
@@ -97,7 +157,7 @@
   \pagestyle{plain}
 }
 
-% -- blind review authors
+% -- Add blind review authors
 \newcommand\hfAddACMBlindReviewAuthors{
   \author{Removed for double-blind review}
   \affiliation{%
@@ -111,15 +171,16 @@
   \renewcommand{\shortauthors}{Removed for double-blind review}
 }
 
+% -- Add blind review authors
 \newcommand\hfAddIEEEBlindReviewAuthors{
   \author{
-  \IEEEauthorblockN{Removed for double-blind review}
-  \IEEEauthorblockA{Removed for double-blind review  \\ Removed for double-blind review}
-  \and
-  \IEEEauthorblockN{Removed for double-blind review}
-  \IEEEauthorblockA{Removed for double-blind review  \\ Removed for double-blind review}
-  \and
-  \IEEEauthorblockN{Removed for double-blind review}
-  \IEEEauthorblockA{Removed for double-blind review  \\ Removed for double-blind review}
+    \IEEEauthorblockN{Removed for double-blind review}
+    \IEEEauthorblockA{Removed for double-blind review  \\ Removed for double-blind review}
+    \and
+    \IEEEauthorblockN{Removed for double-blind review}
+    \IEEEauthorblockA{Removed for double-blind review  \\ Removed for double-blind review}
+    \and
+    \IEEEauthorblockN{Removed for double-blind review}
+    \IEEEauthorblockA{Removed for double-blind review  \\ Removed for double-blind review}
   }
 }

@@ -1,7 +1,6 @@
 % -- author: Alan Livio <alan@telemidia.puc-rio.br>
 % -- URL:    https://github.com/alanlivio/latex-helper-functions
 
-
 % -- common
 % ----------------------------------------
 \newcommand\hfCommonPackages{
@@ -65,6 +64,15 @@
   \hypersetup{hidelinks}
 }
 
+\newcommand\hfHyperrefBlueLinks{
+  \RequirePackage{hyperref}
+  \hypersetup{
+    colorlinks   = true,
+    urlcolor     = blue,
+    linkcolor    = blue
+  }
+}
+
 % -- paragraph
 % ----------------------------------------
 \newcommand\hfParagrphReduceSpacing{
@@ -73,6 +81,12 @@
   % -- reduce paragraph spacing
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}
+}
+
+\newcommand\hfParagrphForceSpacing{
+  \setlength{\parindent}{3em}
+  \setlength{\parskip}{1em}
+  \renewcommand{\baselinestretch}{1.1}
 }
 
 % -- enum
@@ -99,6 +113,14 @@
   \RequirePackage{caption}
   \setlength{\abovecaptionskip}{1pt}
   \setlength{\belowcaptionskip}{1pt}
+}
+
+% -- caption
+% ----------------------------------------
+\newcommand\hfReduceSpacing{
+  \hfCaptionSpacing
+  \hfTitleReduceSpacing
+  \hfParagrphReduceSpacing
 }
 
 % -- Multibib

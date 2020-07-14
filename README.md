@@ -9,12 +9,12 @@ This project provides some useful functions for latex writing.
 To fetch latex-helpers, run:
 
 ```bash
-wget raw.githubusercontent.com/alanlivio/latex-helpers/master/latex_helpers.tex
+wget raw.githubusercontent.com/alanlivio/latex-helpers/master/helpers.tex
 ```
 
 The latex-helpers can be used as a [Latex SubFile](https://en.wikibooks.org/wiki/LaTeX/Modular_Documents).  
 To do that, insert the following command at the beginning of your main latex file:
 
 ```latex
-\include{latex_helpers.tex}
+\include{helpers.tex}
 ```

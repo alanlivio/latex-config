@@ -53,20 +53,19 @@
   \RequirePackage[a4paper, total={6in, 9.5in}]{geometry}
 }
 
-% -- hyperlink
+% -- \RequirePackage{hyperref}
 % ----------------------------------------
-\newcommand\hfHyperrefHideLinks{
-  \RequirePackage{url}
-  \RequirePackage{hyperref}
+
+\newcommand\hfHyperrefSetupHideLinks{
   \hypersetup{hidelinks}
 }
 
-\newcommand\hfHyperrefBlueLinks{
-  \RequirePackage{hyperref}
+\newcommand\hfHyperrefSetupBlueLinks{
+  \definecolor{links}{HTML}{2A1B81}
   \hypersetup{
-    colorlinks   = true,
-    urlcolor     = blue,
-    linkcolor    = blue
+    colorlinks=true,
+    urlcolor=links,
+    citecolor=links
   }
 }
 

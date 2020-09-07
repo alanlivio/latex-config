@@ -1,8 +1,19 @@
+% -- language
+% ----------------------------------------
+
+\newcommand\hfLanguageAmerican{
+  \RequirePackage[american]{babel}
+}
+
+\newcommand\hfLanguageBrazilian{
+  \RequirePackage[brazilian]{babel}
+}
+
 % -- common
 % ----------------------------------------
-\newcommand\hfCommonPackages{
+\newcommand\hfCommonPackagesRequire{
   % -- lang
-  \RequirePackage[brazilian, american]{babel}
+  \hfLanguageAmerican
 
   % -- tables
   \RequirePackage[table]{xcolor}
@@ -49,7 +60,7 @@
   \RequirePackage{wordlike}
 }
 
-\newcommand\hfGeometryLarge{
+\newcommand\hfGeometrySetLarge{
   \RequirePackage[a4paper, total={6in, 9.5in}]{geometry}
 }
 
@@ -65,6 +76,7 @@
   \hypersetup{
     colorlinks=true,
     urlcolor=links,
+    linkcolor=links,
     citecolor=links
   }
 }
@@ -121,12 +133,12 @@
 
 % -- Multibib
 % ----------------------------------------
-\newcommand\hfMultiBib{
+\newcommand\hfMultiBibRequire{
   \RequirePackage{multibib}
   % \RequirePackage[resetlabels]{multibib}
 }
 
-\newcommand\hfMultiBibAsSubSections{
+\newcommand\hfMultiBibSectionAsSubSections{
   \RequirePackage{multibib}
   \renewcommand{\bibsection}{\subsection{\bibname}}
 }

@@ -1,0 +1,116 @@
+%% https://github.com/alanlivio/latex-config
+
+% common requires
+% ----------------------------------------
+% -- lang
+\RequirePackage[american]{babel}
+% -- subcation
+\RequirePackage{subcaption}
+% -- includegraphics, color
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage{soulutf8}
+\RequirePackage{xcolor}
+\RequirePackage{color,soulutf8}
+\definecolor{darkgray}{RGB}{204,204,204}
+\definecolor{gray}{RGB}{217,217,217}
+\definecolor{lightgray}{RGB}{239,239,239}
+% -- font
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{textcomp}
+\RequirePackage{amsfonts}
+% -- lipsum
+\RequirePackage{lipsum}
+% -- tables
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{tabularx}
+\RequirePackage{multirow}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+% -- todonotes
+\RequirePackage{todonotes}
+% -- fixme
+\RequirePackage[nomargin, inline]{fixme}
+% -- itemize
+\RequirePackage{enumitem}
+\SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt}
+% -- url
+\PassOptionsToPackage{hyphens}{url}
+\RequirePackage{url}
+% -- listing
+\RequirePackage{listings}
+% -- spacing
+\RequirePackage{setspace}
+
+
+% funcs
+% ----------------------------------------
+
+% -- geometry funcs
+\newcommand\hfWordLike{
+  \RequirePackage{wordlike}
+}
+\newcommand\hfGeometrySetLarge{
+  \RequirePackage[a4paper, total={6in, 9.5in}]{geometry}
+}
+% -- hyperref funcs
+\newcommand\hfHyperrefBreakLines{
+  \RequirePackage{hyperref}
+  \hypersetup{breaklinks=true}
+}
+\newcommand\hfHyperrefhideLinks{
+  \hypersetup{hidelinks}
+}
+\newcommand\hfHyperrefSetupBlueLinks{
+  % should be called inside document
+  \definecolor{links}{HTML}{2A1B81}
+  \hypersetup{
+    colorlinks=true,
+    urlcolor=links,
+    linkcolor=links,
+    citecolor=links
+  }
+}
+% -- enum funcs
+\newcommand\hfEnumItemHyphen{
+  \RequirePackage{enumitem}
+  \def\labelitemi{-}
+}
+% -- bib funcs
+\newcommand\hfMultiBibAsSubSections{
+  \RequirePackage{multibib}
+  \renewcommand{\bibsection}{\subsection{\bibname}}
+}
+\newcommand\hfNatBibSortNumber{
+  \RequirePackage[numbers, sort&compress]{natbib}
+}
+
+% -- spacing funcs
+\newcommand\hfEnumReduceSpacing{
+  \RequirePackage{enumitem}
+  \setlength{\itemsep}{0pt}
+}
+\newcommand\hfParagraphReduceSpacing{
+  \linespread{1}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}
+\newcommand\hfCaptionReduceSpacing{
+  \RequirePackage{caption}
+  \setlength{\abovecaptionskip}{1pt}
+  \setlength{\belowcaptionskip}{1pt}
+}
+\newcommand\hfTitleReduceSpacing{
+  \RequirePackage[compact]{titlesec}
+  \titlespacing{\section}{0pt}{*0}{*0}
+  \titlespacing{\subsection}{0pt}{*0}{*0}
+  \titlespacing{\subsubsection}{0pt}{*0}{*0}
+}
+\newcommand\hfReduceSpacing{
+  \hfEnumReduceSpacing
+  \hfCaptionReduceSpacing
+  \hfParagraphReduceSpacing
+  \hfTitleReduceSpacing
+}

@@ -1,0 +1,47 @@
+%% https://github.com/alanlivio/latex-config/blob/master/config-ncl.tex
+
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{tag}{rgb}{0.1,0.05,0.05}
+\definecolor{att}{rgb}{0,0,0}
+\definecolor{string}{rgb}{0.2,0.2,0.2}
+
+\lstdefinelanguage{ncl}{
+  alsoletter={<>/=$\$$$\dollar$\-+},
+  keywords={/>, >, <assessmentStatement, </assessmentStatement>, <attributeAssessment, <area, <bind, </bind>, <bindRule, <bindParam, <body, <body>, </body>, <causalConnector, </causalConnector>, <compositeRule, </compositeRule>, <compoundAction, </compoundAction>, <compoundCondition, </compoundCondition>, <compoundStatement, </compoundStatement>, <connectorBase, </connectorBase>, <connectorParam, <context, </context>, <descriptor, </descriptor>, <descriptorBase, </descriptorBase>, <descriptorParam, <descriptorSwitch, </descriptorSwitch>, <head, <head>, </head>, <importBase, <importNCL, <importedDocumentBase, </importedDocumentBase>, <link, </link>, <linkParam, <mapping, <media, </media>, <meta, <metadata, <ncl, <ncl>, </ncl>, <port, <property, <region, </region>, <regionBase, </regionBase>, <rule, <ruleBase, </ruleBase>, <simpleAction, <simpleCondition, <switch, </switch>, <switchPort, </switchPort>, <transition, <transitionBase, </transitionBase>, <valueAssessment},
+  keywords={[2] actionType=, alias=, azimuthal=, url=, attributeType=, baseId=, begin=, borderColor=, borderWidth=, bottom=, by=, comparator=, component=, content=, constituent=, coords=, defaultComponent=, defaultDescriptor=, defaultOrder=, delay=, descriptor=, device=, direction=, documentURI=, dur=, duration=, end=, endProgress=, eventType=, explicitDur=, fadeColor=, first=, focusBorderColor=, focusBorderTransparency=, focusBorderWidth=, focusIndex=, focusSelSrc=, focusSrc=, freeze=, height=, horRepeat=, id=, increment=, instance=, interface=, isNegated=, key=, label=, last=, left=, max=, mediaType=, min=, moveDown=, moveLeft=, moveRight=, moveUp=, name=, offset=, operator=, order=, parent=, perspective=, player=, position=, polar=, qualifier=, rate=, refer=, region=, repeat=, repeatDelay=, right=, role=, rule=, selBorderColor=, src=, startProgress=, subType=, text=, title=, top=, transIn=, transOut=, transition=, type=, value=, var=, vertRepeat=, width=, xconnector=, xmlns=, zIndex=},
+  morecomment=[s]{<!--}{-->},
+  morestring=[b]",
+  morestring=[d]'
+}
+
+\lstset{
+  backgroundcolor=\color{white},         % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\ttfamily\footnotesize,     % the size of the fonts that are used for the code
+  breakatwhitespace=false,               % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                       % sets automatic line breaking
+  captionpos=b,                          % sets the caption-position to bottom
+  commentstyle=\itshape\color{mygray},   % comment style
+  % deletekeywords={...},                % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},                % if you want to add LaTeX within your code
+  extendedchars=true,                    % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=lines,                           % adds a frame around the code
+  keepspaces=true,                       % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\bfseries\color{tag},     % keyword style
+  keywordstyle={[2]\color{att}},         % keyword style
+  % morekeywords={*,...},                % if you want to add more keywords to the set
+  numbers=left,                          % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                         % how far the line-numbers are from the code
+  numberstyle=\tiny\color{black},        % the style that is used for the line-numbers
+  rulecolor=\color{black},               % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                      % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,                % underline spaces within strings only
+  showtabs=false,                        % show tabs within strings adding particular underscores
+  stepnumber=1,                          % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{string},            % string literal style
+  tabsize=2,                             % sets default tabsize to 2 spaces
+  % title=\lstname                       % show the filename of files included with \lstinputlisting; also try caption instead of title
+  % columns=flexible,
+  mathescape=true,                       % enable inserth mathmode 
+  % linewidth=\textwidth,
+  % floatplacement={tbp}
+}

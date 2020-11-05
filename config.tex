@@ -1,12 +1,10 @@
-%% https://github.com/alanlivio/latex-config/blob/master/config.tex
+%% https://github.com/alanlivio/latex-config
 
 % common requires
 % ----------------------------------------
 % -- lang
 \RequirePackage[american]{babel}
-% -- subcation
-\RequirePackage{subcaption}
-% -- includegraphics, color
+% -- graphics, color
 \RequirePackage{graphicx}
 \RequirePackage{color}
 \RequirePackage{soulutf8}
@@ -44,18 +42,16 @@
 % -- spacing
 \RequirePackage{setspace}
 
-
-% funcs
+%  funcs
 % ----------------------------------------
-
-% -- geometry funcs
+% -- geometry 
 \newcommand\hfWordLike{
   \RequirePackage{wordlike}
 }
 \newcommand\hfGeometrySetLarge{
   \RequirePackage[a4paper, total={6in, 9.5in}]{geometry}
 }
-% -- hyperref funcs
+% -- hyperref 
 \newcommand\hfHyperrefBreakLines{
   \RequirePackage{hyperref}
   \hypersetup{breaklinks=true}
@@ -73,12 +69,16 @@
     citecolor=links
   }
 }
-% -- enum funcs
+% -- enum 
 \newcommand\hfEnumItemHyphen{
   \RequirePackage{enumitem}
   \def\labelitemi{-}
 }
-% -- bib funcs
+% -- subcaption 
+\newcommand\hfSubcaptionEnable{
+    \RequirePackage{subcaption}
+}
+% -- bib 
 \newcommand\hfMultiBibAsSubSections{
   \RequirePackage{multibib}
   \renewcommand{\bibsection}{\subsection{\bibname}}
@@ -86,29 +86,28 @@
 \newcommand\hfNatBibSortNumber{
   \RequirePackage[numbers, sort&compress]{natbib}
 }
-
-% -- spacing funcs
-\newcommand\hfEnumReduceSpacing{
+% -- spacing 
+\newcommand\hfReduceSpacingEnum{
   \RequirePackage{enumitem}
   \setlength{\itemsep}{0pt}
 }
-\newcommand\hfParagraphReduceSpacing{
+\newcommand\hfReduceSpacingParagraph{
   \linespread{1}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}
 }
-\newcommand\hfCaptionReduceSpacing{
+\newcommand\hfReduceSpacingCaption{
   \RequirePackage{caption}
   \setlength{\abovecaptionskip}{1pt}
   \setlength{\belowcaptionskip}{1pt}
 }
-\newcommand\hfTitleReduceSpacing{
+\newcommand\hfReduceSpacingTitle{
   \RequirePackage[compact]{titlesec}
   \titlespacing{\section}{0pt}{*0}{*0}
   \titlespacing{\subsection}{0pt}{*0}{*0}
   \titlespacing{\subsubsection}{0pt}{*0}{*0}
 }
-\newcommand\hfReduceSpacing{
+\newcommand\hfReduceSpacingAll{
   \hfEnumReduceSpacing
   \hfCaptionReduceSpacing
   \hfParagraphReduceSpacing
